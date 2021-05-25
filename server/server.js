@@ -44,7 +44,7 @@ app.get('/jokes', (req, res) =>{
 }) 
 
 // POST will plug in information into Server from Client
-app.post('/items', (req, res) =>{
+app.post('/jokes', (req, res) =>{
   console.log('Recieved Information:', req.body);
   jokes.push(req.body)
   res.send(201)
