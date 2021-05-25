@@ -34,6 +34,24 @@ let jokes = [
   }
 ];
 
+// GET and POST Routes Below
+
+// GET sends server info to Client Side
+app.get('/jokes', (req, res) =>{
+  console.log('GOING TO JOKES');
+  // sending over jokes array
+  res.send(jokes);
+}) 
+
+// POST will plug in information into Server from Client
+app.post('/items', (req, res) =>{
+  console.log('Recieved Information:', req.body);
+  jokes.push(req.body)
+  res.send(201)
+})
+
+
+
 // serve back static files
 app.use(express.static('server/public'));
 
